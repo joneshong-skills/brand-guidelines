@@ -6,8 +6,8 @@ description: >-
   "品牌規範", "品牌指南", "設計規範", "視覺識別",
   or discusses Anthropic brand colors, typography, corporate identity,
   visual formatting, or company design standards.
-version: 0.2.0
-tools: Bash, Read, Write, Glob, Edit
+version: 0.3.0
+tools: Bash, Read, Write, Glob, Edit, sandbox_execute
 license: Complete terms in LICENSE.txt
 argument-hint: "Describe the artifact to apply brand styling to"
 ---
@@ -21,6 +21,14 @@ Apply Anthropic's official brand identity (colors, typography, accent palette) t
 **Keywords**: branding, corporate identity, visual identity, post-processing, styling, brand colors, typography, Anthropic brand, visual formatting, visual design
 
 ---
+
+## Agent Delegation
+
+Delegate brand system documentation to `designer` agent.
+
+- **Agent**: `designer` (Sonnet, maxTurns=20)
+- **Tools**: Read, Write, Edit, Bash, Glob
+- **Delegate when**: applying brand colors/typography to artifacts, generating styled HTML/CSS, writing python-pptx/python-docx scripts
 
 ## Workflow
 
@@ -244,6 +252,15 @@ def add_accent_line(slide, color=ACCENT_ORANGE, top=Inches(2), width=Inches(2)):
 | **Write** | Create python-pptx / python-docx scripts; write new styled HTML |
 | **Edit** | Surgically inject brand CSS or replace color/font values in-place |
 | **Bash** | Execute python scripts; run markitdown; generate thumbnails |
+
+## Sandbox Optimization
+
+Batch operations benefit from `sandbox_execute`:
+
+- **Batch brand validation**: Import `scripts/apply_brand.py` in sandbox to check multiple artifacts for brand compliance in one call
+- **Batch styling**: Process multiple files (pptx, html, docx) through brand styling pipeline in sandbox, returning structured results
+
+Principle: **Deterministic batch work → sandbox; reasoning/presentation → LLM.**
 
 ## Continuous Improvement
 
