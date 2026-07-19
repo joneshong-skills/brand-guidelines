@@ -1,15 +1,11 @@
 ---
 name: brand-guidelines
-description: >-
-  This skill should be used when the user asks to "apply brand guidelines",
-  "use brand colors", "apply brand styling", "brand guide", "design standards",
-  "品牌規範", "品牌指南", "設計規範", "視覺識別",
-  or discusses Anthropic brand colors, typography, corporate identity,
-  visual formatting, or company design standards.
+description: "brand, guidelines, apply, colors, styling, guide, design, 品牌規範, 品牌指南, 設計規範, 視覺識別"
 version: 0.3.0
 tools: Bash, Read, Write, Glob, Edit, sandbox_execute
 license: Complete terms in LICENSE.txt
 argument-hint: "Describe the artifact to apply brand styling to"
+disable-model-invocation: true
 ---
 
 # Anthropic Brand Styling
