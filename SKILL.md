@@ -5,7 +5,6 @@ version: 0.3.0
 tools: Bash, Read, Write, Glob, Edit, sandbox_execute
 license: Complete terms in LICENSE.txt
 argument-hint: "Describe the artifact to apply brand styling to"
-disable-model-invocation: true
 ---
 
 # Anthropic Brand Styling
